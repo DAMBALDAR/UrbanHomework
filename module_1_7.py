@@ -5,7 +5,8 @@ students = {'Johnny', 'Bilbo', 'Steve', 'Khendrik', 'Aaron'}
 sum_list =  list(map(sum, grades))
 len_list = list(map(len, grades))
 
-
+# не выходит решить задачу не применяя материал который еще не изучен в курсе
+grades = [sum_list[i]/len_list[i] for i in range(len(students))]
 
 # set в list и сортировка
 students_list = list(students)
