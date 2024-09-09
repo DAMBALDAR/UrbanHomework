@@ -1,14 +1,17 @@
+"""
+Если в списке нет отрицательных чисел, то ваша программа выпадает в ошибку,
+т.к происходит выход за пределы списка. Прошу доработать этот момент.
+"""
+
+#my_list = [42, 69, 322, 13, 0, 99, 5, 9, 8, 7, 6, 5]
 my_list = [42, 69, 322, 13, 0, 99, -5, 9, 8, 7, -6, 5]
-count = -1
+i = 0
 
-my_list_range = len(my_list)
+my_list_len = len(my_list)
 
-while count < my_list_range:
-    count += 1
-    if my_list[count] < 0:
+while i < my_list_len:
+    if my_list[i] < 0:
         break
-    elif my_list[count] == 0:
-        continue
-    else:
-        print(my_list[count])
-
+    if my_list[i] > 0:
+        print(my_list[i])
+    i += 1
