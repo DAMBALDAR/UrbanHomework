@@ -4,10 +4,10 @@ primes, not_primes = list(), list()
 for number in numbers:
     if number == 1:
         continue
-    is_prime = False
+    is_prime = True
     for i in range(2, number):
         if number % i == 0:
-            is_prime = True
+            is_prime = False
     if is_prime == 1:
         primes.append(number)
     else:
