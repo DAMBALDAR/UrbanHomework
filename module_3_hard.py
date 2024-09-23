@@ -8,40 +8,35 @@ data_structure = [
 
 def calculate_structure_sum(*args):
     result = 0
-    print(args)
-    print()
 
     for element in args:
-        if isinstance(element, list):
-            print(type(element))
-            result += calculate_structure_sum(*element)
 
-        elif isinstance(element, tuple):
-            print(type(element))
-            result += calculate_structure_sum(*element)
+        element_type = str(type(element))[8:-2]
 
-        elif isinstance(element, dict):
-            print(type(element))
-            result += calculate_structure_sum(*element.items())
+        match element_type:
+            case 'list':
+                result += calculate_structure_sum(*element)
 
-        elif isinstance(element, set):
-            print(type(element))
-            result += calculate_structure_sum(*list(element))
+            case 'tuple':
+                result += calculate_structure_sum(*element)
 
-        elif isinstance(element, str):
-            result += len(element)
+            case 'dict':
+                result += calculate_structure_sum(*element.items())
 
-        elif isinstance(element, float):
-            result += element
+            case 'set':
+                result += calculate_structure_sum(*list(element))
 
-        elif isinstance(element, bool):
-            result += int(element)
+            case 'str':
+                result += len(element)
 
-        elif isinstance(element, int):
-            result += element
+            case 'float':
+                result += element
 
-        else:
-            print('Unknown type')
+            case 'bool':
+                result += int(element)
+
+            case 'int':
+                result += element
 
     return result
 
